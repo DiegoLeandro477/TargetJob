@@ -20,9 +20,15 @@ public class StringInvert {
         System.out.print("Digite aqui: ");
         String pay = sc.nextLine();
         
-        StringBuilder invert = new StringBuilder(pay).reverse();
+        char[] chars = pay.toCharArray();
+        char[] invert = new char[pay.length()];
         
-        System.out.println(invert.toString());
+        // inverte a string trocando os caracteres
+        for (int i = 0; i<pay.length(); i++){
+            invert[i] = chars[pay.length() - 1 - i];
+        }
+        
+        System.out.println(new String(invert));
         
         sc.close();
     }
